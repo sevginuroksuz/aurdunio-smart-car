@@ -1,109 +1,82 @@
-# 🚗 Arduino Smart Car
+# Oneri Raporu
 
-<p align="center">
-  <img src="https://www.arduino.cc/en/uploads/Main/ArduinoUno_R3_Front_450px.jpg" width="300">
-</p>
-
-## 📌 Proje Hakkında  
-Arduino Smart Car, **otonom hareket edebilen** ve **karşısına çıkan engelleri algılayarak yön değiştiren** bir robot projesidir.  
-Bu proje sayesinde **temel robotik, elektronik ve programlama becerileri** geliştirilecek ve IoT uygulamalarına giriş yapılacaktır.
+## 1. Proje Konusu
+Arduino Smart Car, **otonom hareket edebilen** ve **karşısına çıkan engelleri algılayarak yön değiştiren** bir robot projesidir. Bu proje, **temel robotik, elektronik ve programlama becerileri** kazandırmayı hedefler ve IoT (Nesnelerin İnterneti) uygulamalarına giriş yapmak için iyi bir fırsattır. Proje, Arduino Uno kartı ile entegre edilen sensörler ve motor sürücüler kullanarak otonom hareket etmesini sağlar.
 
 ---
 
-## 🎯 Proje Amacı  
-✔️ Otonom hareket eden bir robot geliştirmek  
-✔️ Engel algılama ve yönlendirme algoritmalarını uygulamak  
-✔️ Sensörler ve motor sürücüler ile çalışmayı öğrenmek  
-✔️ Arduino ve C++ ile programlama pratiği yapmak  
+## 2. Proje Hedefleri
+- **Otonom hareket eden bir robot geliştirmek:** Robot, çevresindeki engelleri algılayarak yön değiştirebilecek.
+- **Engel algılama ve yönlendirme algoritmalarını uygulamak:** Robot, HC-SR04 ultrasonik sensörleri ile çevresini sürekli tarar ve mesafeye göre yön değiştirir.
+- **Sensörler ve motor sürücüler ile çalışmayı öğrenmek:** Proje, robotik sistemlerde kullanılan temel sensörler ve motor sürücülerle çalışma pratiği kazandırır.
+- **Arduino ve C++ ile programlama pratiği yapmak:** Proje, Arduino IDE kullanarak programlama becerilerini geliştirmeye yönelik bir fırsat sunar.
 
 ---
 
-## ⚙️ Çalışma Prensibi  
-
-### 📡 **1. Engel Algılama:**  
-- **HC-SR04 Ultrasonik Sensör**, robotun önündeki mesafeyi ölçer.  
-- Eğer mesafe **belirlenen eşik değerin altına düşerse**, robot yön değiştirir.  
-
-### 🔄 **2. Karar Verme:**  
-- **Mesafe uygunsa:** Robot düz ilerler.  
-- **Engel varsa:** Robot sağa veya sola dönerek yoluna devam eder.  
-
-### 🚗 **3. Hareket Kontrolü:**  
-- **L298N Motor Sürücü Kartı**, motorlara gerekli komutları iletir.  
-- **DC motorlar**, verilen komutlara göre robotun yönlendirilmesini sağlar.  
-
-### 🔁 **4. Döngüsel Çalışma:**  
-- Robot **çevresini sürekli tarar** ve engelleri algıladıkça yön değiştirir.  
+## 3. Tahmini Zaman Çizelgesi
+| **Görev**                                        | **Tahmini Süre**  |
+|--------------------------------------------------|-------------------|
+| **Proje Planlaması ve Araştırma**                | 1 hafta           |
+| **Arduino ve Sensörlerin Kurulumu**              | 1 hafta           |
+| **Yazılım Geliştirme ve Engel Algılama Algoritması** | 2 hafta           |
+| **Donanım Montajı ve Testler**                   | 2 hafta           |
+| **Yazılım ve Donanım Entegrasyonu**              | 2 hafta           |
+| **Test ve Hata Ayıklama**                        | 1 hafta           |
+| **Son Testler ve Optimizasyon**                  | 1 hafta           |
+| **Proje Sonuçları ve Rapor Hazırlama**           | 1 hafta           |
+| **Toplam Süre**                                  | 9 hafta           |
 
 ---
 
-## 🛠 Kullanılacak Malzemeler  
+## 4. Kaynak Planlaması
 
-| **Parça**                             | **Açıklama**                              |
-|---------------------------------------|------------------------------------------|
-| 🟢 **Arduino Uno**                     | Robotun beyni, program çalıştırma       |
-| 🟡 **L298N Motor Sürücü Kartı**         | Motorların hız ve yön kontrolü          |
-| 🔵 **HC-SR04 Ultrasonik Sensör**       | Engel algılama ve mesafe ölçümü         |
-| 🔴 **DC Motorlar & Tekerlekler**       | Robotun hareket etmesini sağlar        |
-| ⚫ **6'lı AA Pil Yuvası & Li-Po Pil**   | Robotun güç kaynağı                     |
-| 🟣 **Jumper Kablolar**                 | Bağlantılar için                        |
-| 🟠 **LED ve Buzzer (Opsiyonel)**       | Geri bildirim sistemleri                |
+### **Proje Ekibi:**
+- **Sevgi Nur Öksüz (Proje Yöneticisi):** Proje takibini yapacak, genel yönlendirme ve raporlama.
+- **Buse Yıldız (Teknik Sorumlu):** Arduino ve sensörlerin kurulumu, yazılım geliştirme ve algoritmaların oluşturulmasından sorumlu kişi.
+- **Aybüke Erarslan (Donanım Uzmanı):** Elektronik bileşenlerin montajı ve test edilmesinden sorumlu kişi.
+- **Onur Kerem (Yazılım Geliştirici):** C++ ile programlama, algoritmaların yazılması ve sensör/motor kontrol yazılımlarının geliştirilmesinden sorumlu kişi.
 
 ---
 
-## 📝 Yazılım ve Algoritma  
+### **Kullanılacak Ekipmanlar:**
 
-```cpp
-#define trigPin 9
-#define echoPin 10
-#define motorA1 3
-#define motorA2 5
-#define motorB1 6
-#define motorB2 11
-
-void setup() {
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  pinMode(motorA1, OUTPUT);
-  pinMode(motorA2, OUTPUT);
-  pinMode(motorB1, OUTPUT);
-  pinMode(motorB2, OUTPUT);
-  Serial.begin(9600);
-}
-
-void loop() {
-  long duration;
-  int distance;
-
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-
-  duration = pulseIn(echoPin, HIGH);
-  distance = duration * 0.034 / 2;
-
-  Serial.println(distance);
-
-  if (distance < 20) { 
-    digitalWrite(motorA1, LOW);
-    digitalWrite(motorA2, HIGH);
-    digitalWrite(motorB1, HIGH);
-    digitalWrite(motorB2, LOW);
-    delay(500);
-  } else {  
-    digitalWrite(motorA1, HIGH);
-    digitalWrite(motorA2, LOW);
-    digitalWrite(motorB1, HIGH);
-    digitalWrite(motorB2, LOW);
-  }
-}
-```
+| **Parça**                          | **Açıklama**                                |
+|------------------------------------|--------------------------------------------|
+| 🟢 **Arduino Uno**                  | Robotun beyni, program çalıştırma ve sensör motor kontrolü |
+| 🟡 **L298N Motor Sürücü Kartı**     | Motorların hız ve yön kontrolü            |
+| 🔵 **HC-SR04 Ultrasonik Sensör**    | Engel algılama ve mesafe ölçümü           |
+| 🔴 **DC Motorlar & Tekerlekler**    | Robotun hareket etmesini sağlar           |
+| ⚫ **6'lı AA Pil Yuvası & Li-Po Pil**| Robotun güç kaynağı                       |
+| 🟣 **Jumper Kablolar**              | Bağlantılar için                          |
+| 🟠 **LED ve Buzzer (Opsiyonel)**    | Geri bildirim sistemleri                  |
 
 ---
 
-## 🚨 Karşılaşılabilecek Problemler ve Çözümleri  
+### **Kullanılacak Yazılımlar:**
+
+- **Arduino IDE:** Arduino kartının programlanması için kullanılan yazılım.
+- **C++:** Proje kodlaması için kullanılan programlama dili.
+
+---
+
+### **Proje Maliyeti:**
+
+| **Ekipman**                        | **Yaklaşık Maliyet (USD)**                 |
+|------------------------------------|--------------------------------------------|
+| 🟢 **Arduino Uno**                  | 10 USD                                     |
+| 🟡 **L298N Motor Sürücü Kartı**     | 5 USD                                      |
+| 🔵 **HC-SR04 Ultrasonik Sensör**    | 3 USD                                      |
+| 🔴 **DC Motorlar & Tekerlekler**    | 10 USD                                     |
+| ⚫ **6'lı AA Pil Yuvası & Li-Po Pil**| 8 USD                                      |
+| 🟣 **Jumper Kablolar (set)**       | 2 USD                                      |
+| 🟠 **LED ve Buzzer (Opsiyonel)**    | 2 USD                                      |
+| **Toplam**                         | **40 USD**                                 |
+
+**Not:** Maliyetler yaklaşık değerlerdir ve kullanılan tedarikçilere göre değişebilir. Ayrıca, bazı ekipmanlar (örneğin, Arduino Uno) birden fazla projede kullanılabilir, bu nedenle toplam maliyet birden fazla proje için paylaşılabilir.
+
+---
+
+## 5. Risk Analizi
 
 | **Problem**                             | **Çözüm**                                      |
 |-----------------------------------------|----------------------------------------------|
@@ -114,25 +87,8 @@ void loop() {
 
 ---
 
-## 🎬 Video ve Görseller  
-
-📸 **Robotun çalışmasını gösteren bir demo videosu eklenecek**  
-🎥 **Prototip görüntüleri paylaşılacak**  
+## 6. Ticari Potansiyel
+Bu proje, özellikle **eğitim** ve **robotik uygulamalar** alanlarında ticari potansiyele sahip olabilir. Ayrıca, **IoT uygulamaları** için uygun bir temel oluşturur. Otonom robotlar, özellikle eğitim sektöründe, robotik kurslar ve workshop'lar için kullanılabilir. Ayrıca, lojistik ve depo otomasyonu gibi alanlarda daha gelişmiş versiyonlarıyla ticari kullanım potansiyeli bulunabilir.
 
 ---
 
-## 📌 Katkıda Bulunmak İster misin?  
-Projeye katkıda bulunmak için:  
-1. **Fork yap** 🍴  
-2. **Yeni bir dal (branch) oluştur** 🌿  
-3. **Geliştirmeleri yap ve commit at** 💻  
-4. **Pull request gönder** 🚀  
-
-Her türlü öneriye açığım!  
-
-📧 **İletişim:** [sevginuroksuz@gmail.com]  
-
----
-
-## 🏆 Lisans  
-🔗 **Bu proje MIT Lisansı ile sunulmaktadır.**  
