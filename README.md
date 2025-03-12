@@ -50,7 +50,7 @@ Bu proje **MIT Lisansı** ile lisanslanmıştır.
 
 ## 📸 Görseller
 
-Robotun çalışmasını gösteren bir görsel:
+Robotun son halini gösteren bir görsel:
 
 ![Arduino Smart Car](./Figure/arduino-smart-car.jpg)
 
