@@ -31,10 +31,23 @@ Arduino Smart Car, **otonom hareket edebilen** ve **karşısına çıkan engelle
 ## 4. Kaynak Planlaması
 
 ### **Proje Ekibi:**
-- **Sevgi Nur Öksüz (Proje Yöneticisi):** Proje takibini yapacak, genel yönlendirme ve raporlama.
-- **Buse Yıldız (Teknik Sorumlu):** Arduino ve sensörlerin kurulumu, yazılım geliştirme ve algoritmaların oluşturulmasından sorumlu kişi.
-- **Aybüke Erarslan (Donanım Uzmanı):** Elektronik bileşenlerin montajı ve test edilmesinden sorumlu kişi.
-- **Onur Kerem (Yazılım Geliştirici):** C++ ile programlama, algoritmaların yazılması ve sensör/motor kontrol yazılımlarının geliştirilmesinden sorumlu kişi.
+- **Sevgi Nur Öksüz :**
+- Arduino kodlarını yazma   
+- Sensörlerden gelen verileri işleme  
+- Kabloların düzenli yerleştirilmesini sağlama 
+- **Buse Yıldız :**
+- Arduino kodlarını yazma  
+- Sensör ve motorların Arduino'ya bağlantısını yapma  
+- Devre şemasını oluşturma ve test etme  
+- Enerji yönetimi ve pil bağlantılarını sağlama  
+- **Aybüke Erarslan:**
+- Arduino kodlarını yazma  
+- Motor sürücü ve kontrol mekanizmalarını kodlama
+- **Onur Kerem :**
+- Arduino kodlarını yazma   
+- Robotun hareketlerini test etme  
+- Engelleri algılama hassasiyetini ayarlama  
+- Hata tespiti ve optimizasyon önerileri geliştirme
 
 ---
 
