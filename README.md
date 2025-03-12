@@ -2,7 +2,7 @@
 
 ## 📌 Proje Konusu
 
-Arduino Smart Car, **otonom hareket edebilen** ve **karşısına çıkan engelleri algılayarak yön değiştiren** bir robot projesidir. Bu proje sayesinde **temel robotik, elektronik ve programlama becerileri** geliştirilecek ve IoT uygulamalarına giriş yapılacaktır.
+Arduino Smart Car, **otonom hareket edebilen** ve **karşısına çıkan engelleri algılayarak yön değiştiren** bir robot projesidir. Bu proje sayesinde **temel robotik, elektronik ve programlama becerileri** geliştirilecek ve IoT uygulaması yapılmış olacaktır.
 
 ## 📋 Proje Kısa Özeti
 
