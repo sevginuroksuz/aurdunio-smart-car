@@ -40,7 +40,7 @@ Arduino Smart Car, **otonom hareket edebilen** ve **karşısına çıkan engelle
 - Sensör ve motorların Arduino'ya bağlantısını yapma  
 - Devre şemasını oluşturma ve test etme  
 - Enerji yönetimi ve pil bağlantılarını sağlama  
-- **Aybüke Erarslan:**
+- **Aybüke Eraydın:**
 - Arduino kodlarını yazma  
 - Motor sürücü ve kontrol mekanizmalarını kodlama
 - **Onur Kerem :**
