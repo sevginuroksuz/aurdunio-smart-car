@@ -191,7 +191,8 @@ void geri() {
 3. Arduino kodunu yükleyin.  
 4. Seri Monitörü **9600 bps**’de açın.  
 5. Pillerin hepsini pil yuvasına takın böylece robot çalışıyor halde olacaktır.
-6. 
+
+
 ---
 
 ## 10. Elde Edilen Sonuçlar ✅
