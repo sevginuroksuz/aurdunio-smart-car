@@ -65,7 +65,9 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 ## 📷 Fotoğraflar
 | Ön Görünüm                                     | Yan Görünüm                                  |
 |:----------------------------------------------:|:--------------------------------------------:|
-| ![](Figure/body_front.jpg)                       | ![](Figure/body_side.jpg)                      |
+| ![](Figure/body_front.jpg)                       | ![](Figure/body_side.jpg)   
+| ![](Figure/body_back.jpg)                      | ![](Figure/body_top.jpg)                      |
+|
 
 ---
 ## 5. Yazılım Algoritması
@@ -186,6 +188,8 @@ void geri() {
 
 ## 10. Kaynaklar 📚
 
-1. Maker Robotistan, “Arduino ile Engelden Kaçan Robot Araba Yapımı,” https://maker.robotistan.com/engelden-kacan-robot-yapimi/  
-2. GitHub – Arduino Smart Car Projesi: https://github.com/sevginuroksuz/aurdunio-smart-car  
+1. Maker Robotistan, Arduino ile Engelden Kaçan Robot Araba Yapımı : https://maker.robotistan.com/engelden-kacan-robot-yapimi/  
+2. GitHub – Arduino Smart Car Projesi: https://github.com/sevginuroksuz/aurdunio-smart-car
+3. Ultrasonik Sensörün Çalışma Prensibi: https://www.bjultrasonic.com/tr/how-do-ultrasonic-sensors-work/
+4. Yazılım Algoritması Çiziminde: drawio'dan yararlanıldı.
 
