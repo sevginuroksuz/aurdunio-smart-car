@@ -66,6 +66,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 | Ön Görünüm                                     | Yan Görünüm                                  |
 |:----------------------------------------------:|:--------------------------------------------:|
 | ![](Figure/body_front.JPEG)                       | ![](Figure/body_side.JPEG)   
+| Arka Görünüm                                     | Üst Görünüm                                  |
 | ![](Figure/body_back.JPEG)                      | ![](Figure/body_top.JPEG)                      |
 |
 
