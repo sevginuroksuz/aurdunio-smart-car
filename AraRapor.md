@@ -9,16 +9,15 @@
 2. [Özet](#özet)
 3. [Gerekli Malzemeler](#gerekli-malzemeler)
 4. [Kullanılan Yöntemler](#kullanılan-yöntemler) 
-5. [Devre Şeması ve Bağlantılar](#devre-şeması-ve-bağlantılar)
-6. [Ultrasonik Sensörün Çalışma Prensibi](#ultrasonik-sensörün-çalışma-prensibi)
-7. [Fotoğraflar](#fotoğraflar)
-8. [Yazılım Algoritması](#yazılım-algoritması)
-9. [Arduino Kod Örneği](#arduino-kod-örneği)
-10. [Kurulum](#kurulum)
-11. [Elde Edilen Sonuçlar](#elde-edilen-sonuçlar)
-12. [Karşılaşılan Sorunlar ve Çözümler](#karşılaşılan-sorunlar-ve-çözümler)
-13. [Projenin Devamında Yapılacaklar](#projenin-devamında-yapılacaklar)
-14. [Kaynaklar](#kaynaklar)
+5. [Ultrasonik Sensörün Çalışma Prensibi](#ultrasonik-sensörün-çalışma-prensibi)
+6. [Yapılan Çalışmalar ve Görselleri](#yapılan-çalışmalar-ve-görselleri)
+7. [Yazılım Algoritması](#yazılım-algoritması)
+8. [Arduino Kod Örneği](#arduino-kod-örneği)
+9. [Kurulum](#kurulum)
+10. [Elde Edilen Sonuçlar](#elde-edilen-sonuçlar)
+11. [Karşılaşılan Sorunlar ve Çözümler](#karşılaşılan-sorunlar-ve-çözümler)
+12. [Projenin Devamında Yapılacaklar](#projenin-devamında-yapılacaklar)
+13. [Kaynaklar](#kaynaklar)
 ---
 
 ## 1. Proje Konusu
@@ -53,8 +52,20 @@ Bu rapor, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile mesafe ölçü
 - **Güç Kaynağı ve Prototipleme**  
   6×AA pil paketi ile bağımsız besleme, breadboard ve jumper kablolarla hızlı devre prototiplemesi gerçekleştirildi.
   ---
-## 5. Devre Şeması ve Bağlantılar
-![Devre Çizimi](Figure/circuit_diagram.png)
+
+## 5. Ultrasonik Sensörün Çalışma Prensibi
+![Zaman Diyagramı](Figure/ultrasonic_timing.jpg)
+- `Trig` pini 10 µs süreyle HIGH yapılarak ultrasonik dalga gönderilir.  
+- `Echo` pini `pulseIn()` ile yüksek kalma süresi ölçülür.  
+- Mesafe (cm) = (süre / 2) / 29.1 formülüyle hesaplanır.
+- Karar:
+   - `< 15 cm` → geri + sağa dönüş
+   - `>= 15 cm` → ileri hareket edilir.
+
+---
+## 6. 📷 Yapılan Çalışmalar ve Görselleri
+- **Devre Tasarımı ve Montajı**
+- ![Devre Çizimi](Figure/circuit_diagram.png)
 > **Not:** Switch ve klemensi, kırmızı ile gösterilen güç hattına ekleyin.
 
 1. **HC-SR04 Sensör**  
@@ -70,17 +81,12 @@ Bu rapor, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile mesafe ölçü
    - **Klemens** ile sensör ve motor besleme kabloları güvenli şekilde sabitlenir 
 ---
 
-## 6. Ultrasonik Sensörün Çalışma Prensibi
-![Zaman Diyagramı](Figure/ultrasonic_timing.jpg)
-- `Trig` pini 10 µs süreyle HIGH yapılarak ultrasonik dalga gönderilir.  
-- `Echo` pini `pulseIn()` ile yüksek kalma süresi ölçülür.  
-- Mesafe (cm) = (süre / 2) / 29.1 formülüyle hesaplanır.
-- Karar:
-   - `< 15 cm` → geri + sağa dönüş
-   - `>= 15 cm` → ileri hareket edilir.
+- **Yazılım Geliştirme ve Optimizasyon**  
+  - İleri, geri ve sağa dönüş komutlarının C++ tabanlı algoritma ile kodlanması  
+  - PWM sinyalleri ve `delay` süreleri ayarlanarak araç hızı kontrolünün iyileştirilmesi  
+  - Seri monitör üzerinden mesafe ölçüm verilerinin doğruluğu test edildi
 
----
-## 7. 📷 Fotoğraflar
+- **Prototip Fotoğrafları**  
 | Ön Görünüm                                     | Yan Görünüm                                  |
 |:----------------------------------------------:|:--------------------------------------------:|
 | ![](Figure/body_front.JPEG)                       | ![](Figure/body_side.JPEG)   
@@ -88,7 +94,7 @@ Bu rapor, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile mesafe ölçü
 | ![](Figure/body_back.JPEG)                      | ![](Figure/body_top.JPEG)                      |
 
 ---
-## 8. Yazılım Algoritması
+## 7. Yazılım Algoritması
 ![Zaman Diyagramı](Figure/algorithm.png)
 1. Trig pini LOW → kısa bekleme  
 2. Trig pini HIGH (10 µs) → LOW  
@@ -100,7 +106,7 @@ Bu rapor, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile mesafe ölçü
 
 ---
 
-## 9. Arduino Kod Örneği
+## 8. Arduino Kod Örneği
 
 ```cpp
 #define echoPin 12
@@ -176,7 +182,7 @@ void geri() {
 ```
 ---
 
-## 10. Kurulum 🛠️
+## 9. Kurulum 🛠️
 
 1. Arduino IDE ile **Arduino Uno**’yu seçin ve uygun seri portu ayarlayın.  
 2. Devreyi aşağıdaki gibi klemens kullanarak kurun:  
@@ -187,14 +193,14 @@ void geri() {
 6. 
 ---
 
-## 11. Elde Edilen Sonuçlar ✅
+## 10. Elde Edilen Sonuçlar ✅
 
 - **📏 Mesafe Ölçümü**: 10–80 cm aralığında ±2 cm hassasiyet elde edildi.  
 - **🤖 Engelden Kaçış**: Engel algılandığında araç geri gidip 90° dönüş yaparak yeni rota sürdürdü.  
 
 
 ---
-## 12. Karşılaşılan Sorunlar ve Çözümler
+## 11. Karşılaşılan Sorunlar ve Çözümler
 
 - **Pin sayısının yetersizliği**  
   Sensör ve motor sinyal pinleri birleşik gelmişti; her fonksiyon için ayrı pin kullanacak şekilde bağlantıları yeniden düzenledik.  
@@ -208,7 +214,7 @@ void geri() {
   Piller hızla boşaldı; enerji verimliliğini artırmak için yüksek kapasiteli pil veya güç yönetim devresi seçenekleri araştırılacak.
   
 ---
-## 13. Projenin Devamında Yapılacaklar 🚀
+## 12. Projenin Devamında Yapılacaklar 🚀
 
 - **🔧 Switch Entegrasyonu**: Daha ergonomik bir açma/kapama arayüzü için ekstra switch düzenlemeleri.  
 - **📝 Kod Düzenleme**: Okunabilirliği artırmak ve bakımını kolaylaştırmak için refaktör.  
@@ -217,7 +223,7 @@ void geri() {
 
 ---
 
-## 14. Kaynaklar 📚
+## 13. Kaynaklar 📚
 
 1. Maker Robotistan, Arduino ile Engelden Kaçan Robot Araba Yapımı : https://maker.robotistan.com/engelden-kacan-robot-yapimi/  
 2. GitHub – Arduino Smart Car Projesi: https://github.com/sevginuroksuz/aurdunio-smart-car
