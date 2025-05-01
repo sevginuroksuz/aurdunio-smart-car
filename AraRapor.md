@@ -65,8 +65,8 @@ Bu rapor, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile mesafe ölçü
 
 ---
 ## 6. 📷 Yapılan Çalışmalar ve Görselleri
-- **Devre Tasarımı ve Montajı**
-- ![Devre Çizimi](Figure/circuit_diagram.png)
+**Devre Tasarımı ve Montajı**
+![Devre Çizimi](Figure/circuit_diagram.png)
 > **Not:** Switch ve klemensi, kırmızı ile gösterilen güç hattına ekleyin.
 
 1. **HC-SR04 Sensör**  
@@ -82,12 +82,12 @@ Bu rapor, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile mesafe ölçü
    - **Klemens** ile sensör ve motor besleme kabloları güvenli şekilde sabitlenir 
 ---
 
-- **Yazılım Geliştirme ve Optimizasyon**  
+**Yazılım Geliştirme ve Optimizasyon**  
   - İleri, geri ve sağa dönüş komutlarının C++ tabanlı algoritma ile kodlanması  
   - PWM sinyalleri ve `delay` süreleri ayarlanarak araç hızı kontrolünün iyileştirilmesi  
   - Seri monitör üzerinden mesafe ölçüm verilerinin doğruluğu test edildi
 
-- **Prototip Fotoğrafları**  
+**Prototip Fotoğrafları**  
 | Ön Görünüm                                     | Yan Görünüm                                  |
 |:----------------------------------------------:|:--------------------------------------------:|
 | ![](Figure/body_front.JPEG)                       | ![](Figure/body_side.JPEG)   
