@@ -53,7 +53,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 ---
 
 ## 4. Ultrasonik Sensörün Çalışma Prensibi
-![Zaman Diyagramı](figure/ultrasonic_timing.png)
+![Zaman Diyagramı](figure/ultrasonic_timing.jpg)
 - `Trig` pini 10 µs süreyle HIGH yapılarak ultrasonik dalga gönderilir.  
 - `Echo` pini `pulseIn()` ile yüksek kalma süresi ölçülür.  
 - Mesafe (cm) = (süre / 2) / 29.1 formülüyle hesaplanır.
