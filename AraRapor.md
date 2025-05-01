@@ -208,7 +208,7 @@ void geri() {
   Piller hızla boşaldı; enerji verimliliğini artırmak için yüksek kapasiteli pil veya güç yönetim devresi seçenekleri araştırılacak.
   
 ---
-## 12. Projenin Devamında Yapılacaklar 🚀
+## 13. Projenin Devamında Yapılacaklar 🚀
 
 - **🔧 Switch Entegrasyonu**: Daha ergonomik bir açma/kapama arayüzü için ekstra switch düzenlemeleri.  
 - **📝 Kod Düzenleme**: Okunabilirliği artırmak ve bakımını kolaylaştırmak için refaktör.  
@@ -217,7 +217,7 @@ void geri() {
 
 ---
 
-## 13. Kaynaklar 📚
+## 14. Kaynaklar 📚
 
 1. Maker Robotistan, Arduino ile Engelden Kaçan Robot Araba Yapımı : https://maker.robotistan.com/engelden-kacan-robot-yapimi/  
 2. GitHub – Arduino Smart Car Projesi: https://github.com/sevginuroksuz/aurdunio-smart-car
