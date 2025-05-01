@@ -69,7 +69,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 
 ---
 ## 5. Yazılım Algoritması
-![Zaman Diyagramı](figure/ultrasonic_timing.png)
+![Zaman Diyagramı](figure/algorithm.png)
 1. Trig pini LOW → kısa bekleme  
 2. Trig pini HIGH (10 µs) → LOW  
 3. `pulseIn(echoPin, HIGH)` ile süre ölçümü  
