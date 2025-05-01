@@ -17,7 +17,7 @@
 10. [Kurulum](#kurulum)
 11. [Elde Edilen Sonuçlar](#Elde-Edilen-Sonuçlar)
 12. [Karşılaşılan Sorunlar ve Çözümler](#Karşılaşılan-Sorunlar-ve-Çözümler)
-13. [Projenin Devamında Yapılacaklar:](#Projenin-Devamında-Yapılacaklar:)
+13. [Projenin Devamında Yapılacaklar](#Projenin-Devamında-Yapılacaklar)
 14. [Kaynaklar](#kaynaklar)
 ---
 
@@ -206,7 +206,8 @@ void geri() {
   Güç verildiğinde araç kendi kendine durmuyor; ileri aşamada güç hattına seri bir switch ekleyerek manuel kapama sağlayacağız.  
 - **Pil ömrünün kısa olması**  
   Piller hızla boşaldı; enerji verimliliğini artırmak için yüksek kapasiteli pil veya güç yönetim devresi seçenekleri araştırılacak.
-  ---
+  
+---
 ## 12. Projenin Devamında Yapılacaklar 🚀
 
 - **🔧 Switch Entegrasyonu**: Daha ergonomik bir açma/kapama arayüzü için ekstra switch düzenlemeleri.  
