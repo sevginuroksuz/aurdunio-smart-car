@@ -51,7 +51,8 @@ Bu rapor, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile mesafe ölçü
   Sensör ve motor kablolarının güvenli, modüler bağlantısı için harici klemensler kullanıldı.  
 - **Güç Kaynağı ve Prototipleme**  
   6×AA pil paketi ile bağımsız besleme, breadboard ve jumper kablolarla hızlı devre prototiplemesi gerçekleştirildi.
-  ---
+
+---
 
 ## 5. Ultrasonik Sensörün Çalışma Prensibi
 ![Zaman Diyagramı](Figure/ultrasonic_timing.jpg)
