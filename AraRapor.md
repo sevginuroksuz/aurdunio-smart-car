@@ -5,19 +5,19 @@
 
 ---
 ## 📋 İçindekiler
-1. [Proje Tanımı](#Proje-Konusu)
-2. [Özet](#Özet)
-3. [Gerekli Malzemeler](#Gerekli-Malzemeler)
-4. [Kullanılan Yöntemler](#Kullanılan-Yöntemler) 
-5. [Devre Şeması ve Bağlantılar](#Devre-Şeması-ve-Bağlantılar)
-6. [Ultrasonik Sensörün Çalışma Prensibi](#Ultrasonik-Sensörün-Çalışma-Prensibi)
-7. [Fotoğraflar](#Fotoğraflar)
-8. [Yazılım Algoritması](#Yazılım-Algoritması)
-9. [Arduino Kod Örneği](#Arduino-Kod-Örneği)
+1. [Proje Tanımı](#proje-konusu)
+2. [Özet](#özet)
+3. [Gerekli Malzemeler](#gerekli-malzemeler)
+4. [Kullanılan Yöntemler](#kullanılan-yöntemler) 
+5. [Devre Şeması ve Bağlantılar](#devre-şeması-ve-bağlantılar)
+6. [Ultrasonik Sensörün Çalışma Prensibi](#ultrasonik-sensörün-çalışma-prensibi)
+7. [Fotoğraflar](#fotoğraflar)
+8. [Yazılım Algoritması](#yazılım-algoritması)
+9. [Arduino Kod Örneği](#arduino-kod-örneği)
 10. [Kurulum](#kurulum)
-11. [Elde Edilen Sonuçlar](#Elde-Edilen-Sonuçlar)
-12. [Karşılaşılan Sorunlar ve Çözümler](#Karşılaşılan-Sorunlar-ve-Çözümler)
-13. [Projenin Devamında Yapılacaklar](#Projenin-Devamında-Yapılacaklar)
+11. [Elde Edilen Sonuçlar](#elde-edilen-sonuçlar)
+12. [Karşılaşılan Sorunlar ve Çözümler](#karşılaşılan-sorunlar-ve-çözümler)
+13. [Projenin Devamında Yapılacaklar](#projenin-devamında-yapılacaklar)
 14. [Kaynaklar](#kaynaklar)
 ---
 
