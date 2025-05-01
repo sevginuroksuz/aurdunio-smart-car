@@ -5,24 +5,31 @@
 
 ---
 ## 📋 İçindekiler
-1. [Proje Tanımı](#proje-tanımı)
-2. [Malzemeler](#malzemeler)
-3. [Devre Şeması](#devre-şeması)
-4. [Çalışma Prensibi](#çalışma-prensibi)
-5. [Fotoğraflar](#fotoğraflar)
-6. [Kod & Algoritma](#kod--algoritma)
-7. [Kurulum](#kurulum)
-8. [Sonuçlar](#sonuçlar)
-9. [Gelecek Çalışmalar](#gelecek-çalışmalar)
-10. [Kaynaklar](#kaynaklar)
+1. [Proje Tanımı](#Proje-Konusu)
+2. [Özet](#Özet)
+3. [Gerekli Malzemeler](#Gerekli-Malzemeler)
+4. [Kullanılan Yöntemler](#Kullanılan-Yöntemler) 
+5. [Devre Şeması ve Bağlantılar](#Devre-Şeması-ve-Bağlantılar)
+6. [Ultrasonik Sensörün Çalışma Prensibi](#Ultrasonik-Sensörün-Çalışma-Prensibi)
+7. [Fotoğraflar](#Fotoğraflar)
+8. [Yazılım Algoritması](#Yazılım-Algoritması)
+9. [Arduino Kod Örneği](#Arduino-Kod-Örneği)
+10. [Kurulum](#kurulum)
+11. [Elde Edilen Sonuçlar](#Elde-Edilen-Sonuçlar)
+12. [Karşılaşılan Sorunlar ve Çözümler](#Karşılaşılan-Sorunlar-ve-Çözümler)
+13. [Projenin Devamında Yapılacaklar:](#Projenin-Devamında-Yapılacaklar:)
+14. [Kaynaklar](#kaynaklar)
 ---
 
-## 1. Proje Tanımı
+## 1. Proje Konusu
 
 Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölçen ve L298N motor sürücü kartı üzerinden DC motorları yöneterek engelden kaçan bir robot araba tasarımını içerir. Klemens (terminal block) ile sensör ve motor bağlantıları daha sağlam ve düzenli yapılmıştır.  Eklenecek olan bir anahtar (switch) ile motor beslemesi sağlıklı bir şelikde açılıp kapatılabilecektir.
 ---
+## 2. Özet
 
-## 2. Gerekli Malzemeler
+Bu rapor, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile mesafe ölçümü ve L298N motor sürücü ile PWM kontrollü hareket komutlarının bir araya getirildiği engelden kaçan robot araba prototipinin ara aşama sonuçlarını özetler. Devre kurulumu, temel yazılım optimizasyonları ve ilk saha testleri tamamlanarak aracın engelleri algılayıp kaçma mekanizması başarıyla çalıştırılmıştır.
+---
+## 3. Gerekli Malzemeler
 
 - **Arduino Uno**  
 - **Çok Amaçlı Robot Platformu** (şasi ve tekerlek kitleri)  
@@ -31,11 +38,22 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 - **6×AA Pil Yuvası** (veya Li-Po pil)  
 - **Jumper Kabloları**  
 - **Klemens (Terminal Block)** (sensör ve motor kabloları için)  
-- **Anahtar (Switch)** (motor beslemesini açıp kapatmak için) 
+- **Anahtar (Switch)** (motor beslemesini açıp kapatmak için)
+  ---
+## 4. Kullanılan Yöntemler
 
----
-
-## 3. Devre Şeması ve Bağlantılar
+- **Ultrasonik Mesafe Ölçümü**  
+  HC-SR04 sensör üzerindeki `Trig` ve `Echo` pinleri ile `pulseIn()` fonksiyonu kullanılarak mesafe verisi toplandı.  
+- **PWM Kontrollü Motor Sürüşü**  
+  L298N sürücü üzerinden DC motorlar `analogWrite()` ile hızlandırıldı; her motor için ayrı PWM kanalı kullanıldı.  
+- **Arduino IDE ve C++ Sketch**  
+  Arduino Uno’ya yüklenen C++ tabanlı kodda seri iletişim (`Serial.begin`, `Serial.println`), zamanlayıcı (`delayMicroseconds`, `delay`) ve dijital/analog pin kontrolü (`digitalWrite`, `analogWrite`) uygulandı.  
+- **Klemens Terminal Blokları**  
+  Sensör ve motor kablolarının güvenli, modüler bağlantısı için harici klemensler kullanıldı.  
+- **Güç Kaynağı ve Prototipleme**  
+  6×AA pil paketi ile bağımsız besleme, breadboard ve jumper kablolarla hızlı devre prototiplemesi gerçekleştirildi.
+  ---
+## 5. Devre Şeması ve Bağlantılar
 ![Devre Çizimi](Figure/circuit_diagram.png)
 > **Not:** Switch ve klemensi, kırmızı ile gösterilen güç hattına ekleyin.
 
@@ -52,7 +70,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
    - **Klemens** ile sensör ve motor besleme kabloları güvenli şekilde sabitlenir 
 ---
 
-## 4. Ultrasonik Sensörün Çalışma Prensibi
+## 6. Ultrasonik Sensörün Çalışma Prensibi
 ![Zaman Diyagramı](Figure/ultrasonic_timing.jpg)
 - `Trig` pini 10 µs süreyle HIGH yapılarak ultrasonik dalga gönderilir.  
 - `Echo` pini `pulseIn()` ile yüksek kalma süresi ölçülür.  
@@ -62,7 +80,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
    - `>= 15 cm` → ileri hareket edilir.
 
 ---
-## 📷 Fotoğraflar
+## 7. 📷 Fotoğraflar
 | Ön Görünüm                                     | Yan Görünüm                                  |
 |:----------------------------------------------:|:--------------------------------------------:|
 | ![](Figure/body_front.JPEG)                       | ![](Figure/body_side.JPEG)   
@@ -70,7 +88,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 | ![](Figure/body_back.JPEG)                      | ![](Figure/body_top.JPEG)                      |
 
 ---
-## 5. Yazılım Algoritması
+## 8. Yazılım Algoritması
 ![Zaman Diyagramı](Figure/algorithm.png)
 1. Trig pini LOW → kısa bekleme  
 2. Trig pini HIGH (10 µs) → LOW  
@@ -82,7 +100,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 
 ---
 
-## 6. Arduino Kod Örneği
+## 9. Arduino Kod Örneği
 
 ```cpp
 #define echoPin 12
@@ -158,7 +176,7 @@ void geri() {
 ```
 ---
 
-## 7. Kurulum 🛠️
+## 10. Kurulum 🛠️
 
 1. Arduino IDE ile **Arduino Uno**’yu seçin ve uygun seri portu ayarlayın.  
 2. Devreyi aşağıdaki gibi klemens kullanarak kurun:  
@@ -169,15 +187,27 @@ void geri() {
 6. 
 ---
 
-## 8. Sonuçlar ✅
+## 11. Elde Edilen Sonuçlar ✅
 
 - **📏 Mesafe Ölçümü**: 10–80 cm aralığında ±2 cm hassasiyet elde edildi.  
 - **🤖 Engelden Kaçış**: Engel algılandığında araç geri gidip 90° dönüş yaparak yeni rota sürdürdü.  
 
 
 ---
+## 12. Karşılaşılan Sorunlar ve Çözümler
 
-## 9. Gelecek Çalışmalar 🚀
+- **Pin sayısının yetersizliği**  
+  Sensör ve motor sinyal pinleri birleşik gelmişti; her fonksiyon için ayrı pin kullanacak şekilde bağlantıları yeniden düzenledik.  
+- **Klemens eksikliği**  
+  Devrede terminal bloğu bulunmadığından harici klemens satın alıp bağlantılara ekledik.  
+- **Kodun aşırı hızda çalışması**  
+  Araç kontrolsüz hareket ediyordu; PWM değerleri ve `delay` sürelerini ayarlayarak hızı optimize ettik.  
+- **Aracın durmama problemi**  
+  Güç verildiğinde araç kendi kendine durmuyor; ileri aşamada güç hattına seri bir switch ekleyerek manuel kapama sağlayacağız.  
+- **Pil ömrünün kısa olması**  
+  Piller hızla boşaldı; enerji verimliliğini artırmak için yüksek kapasiteli pil veya güç yönetim devresi seçenekleri araştırılacak.
+  ---
+## 12. Projenin Devamında Yapılacaklar 🚀
 
 - **🔧 Switch Entegrasyonu**: Daha ergonomik bir açma/kapama arayüzü için ekstra switch düzenlemeleri.  
 - **📝 Kod Düzenleme**: Okunabilirliği artırmak ve bakımını kolaylaştırmak için refaktör.  
@@ -186,7 +216,7 @@ void geri() {
 
 ---
 
-## 10. Kaynaklar 📚
+## 13. Kaynaklar 📚
 
 1. Maker Robotistan, Arduino ile Engelden Kaçan Robot Araba Yapımı : https://maker.robotistan.com/engelden-kacan-robot-yapimi/  
 2. GitHub – Arduino Smart Car Projesi: https://github.com/sevginuroksuz/aurdunio-smart-car
