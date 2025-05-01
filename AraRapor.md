@@ -36,7 +36,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 ---
 
 ## 3. Devre Şeması ve Bağlantılar
-![Devre Çizimi](figure/circuit_diagram.png)
+![Devre Çizimi](Figure/circuit_diagram.png)
 > **Not:** Switch ve klemensi, kırmızı ile gösterilen güç hattına ekleyin.
 
 1. **HC-SR04 Sensör**  
@@ -53,7 +53,7 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 ---
 
 ## 4. Ultrasonik Sensörün Çalışma Prensibi
-![Zaman Diyagramı](figure/ultrasonic_timing.jpg)
+![Zaman Diyagramı](Figure/ultrasonic_timing.jpg)
 - `Trig` pini 10 µs süreyle HIGH yapılarak ultrasonik dalga gönderilir.  
 - `Echo` pini `pulseIn()` ile yüksek kalma süresi ölçülür.  
 - Mesafe (cm) = (süre / 2) / 29.1 formülüyle hesaplanır.
@@ -65,11 +65,11 @@ Bu proje, Arduino Uno kontrolünde HC-SR04 ultrasonik sensör ile uzaklık ölç
 ## 📷 Fotoğraflar
 | Ön Görünüm                                     | Yan Görünüm                                  |
 |:----------------------------------------------:|:--------------------------------------------:|
-| ![](figure/body_front.jpg)                       | ![](figure/body_side.jpg)                      |
+| ![](Figure/body_front.jpg)                       | ![](Figure/body_side.jpg)                      |
 
 ---
 ## 5. Yazılım Algoritması
-![Zaman Diyagramı](figure/algorithm.png)
+![Zaman Diyagramı](Figure/algorithm.png)
 1. Trig pini LOW → kısa bekleme  
 2. Trig pini HIGH (10 µs) → LOW  
 3. `pulseIn(echoPin, HIGH)` ile süre ölçümü  
